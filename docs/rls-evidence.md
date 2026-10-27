@@ -12,6 +12,14 @@ no sign-in). This is the evidence for the Part 2 reflection requirement.
 | Anon INSERT | fails | `HTTP 401` — `42501 permission denied for table projects` |
 | Anon UPDATE | fails | `HTTP 401` — `42501` |
 | Anon DELETE | fails | `HTTP 401` — `42501` |
+| Stranger sign-up | fails | `HTTP 422` — `signup_disabled` |
+| Owner sign-in | works | `HTTP 200`, valid session token issued |
+| Owner INSERT | works | `HTTP 201`, row stamped with the owner's `auth.uid()` |
+| Owner DELETE | works | `HTTP 204`, table back to `[]` |
+
+The anon tests were measured on 2026-10-27 (morning); the owner/stranger tests
+the same day after the admin user was created. No test rows remain — the
+owner-insert row was deleted by its owner as part of the test.
 
 ## Method
 
@@ -38,6 +46,12 @@ curl -s -w "\nHTTP:%{http_code}\n" -X DELETE \
   "$URL?id=eq.00000000-0000-0000-0000-000000000000" \
   -H "apikey: $KEY"
 ```
+
+The owner-side tests used the same endpoint with a `Bearer <session-token>`
+header obtained from `POST /auth/v1/token?grant_type=password` — i.e. a real
+authenticated session, exactly what the /admin page holds after sign-in.
+Stranger sign-up was tested with `POST /auth/v1/signup` and a throwaway
+address. The admin account password is not recorded in this repo.
 
 ## Why it holds
 
