@@ -58,9 +58,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <footer className="border-t border-neutral-800">
           <div className="mx-auto flex max-w-3xl flex-wrap gap-4 px-4 py-6 text-sm text-neutral-400">
             <span>© 2026 Marnus</span>
-            {/* TODO(W36): point these at the real GitHub / LinkedIn profiles */}
+            {/* TODO(W36): add the LinkedIn URL once the profile exists */}
             <a
-              href="https://github.com/"
+              href="https://github.com/ProgrammerMarnus"
               target="_blank"
               rel="noreferrer"
               className="hover:text-white"
