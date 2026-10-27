@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="860" viewBox="0 0 440 860" font-family="Helvetica, Arial, sans-serif">
+  <rect x="10" y="10" width="420" height="840" rx="18" fill="#fbfbfb" stroke="#444" stroke-width="2"/>
+  <text x="220" y="848" font-size="11" fill="#777" text-anchor="middle">Home — mobile 390px</text>
+  <rect x="30" y="34" width="380" height="48" rx="8" fill="#e6e6e6"/>
+  <text x="46" y="63" font-size="13" font-weight="bold" fill="#333">marnus.dev</text>
+  <text x="404" y="63" font-size="10" fill="#555" text-anchor="end">About · Projects · Skills · Contact</text>
+  <rect x="30" y="100" width="380" height="190" rx="8" fill="#ececec"/>
+  <text x="48" y="134" font-size="16" font-weight="bold" fill="#333">Marnus</text>
+  <text x="48" y="156" font-size="13" fill="#444">Full-Stack Developer</text>
+  <text x="48" y="182" font-size="11" fill="#666">one-line pitch: what I build, for whom</text>
+  <rect x="48" y="210" width="120" height="34" rx="6" fill="#d4d4d4" stroke="#999"/>
+  <text x="108" y="231" font-size="11" fill="#333" text-anchor="middle">View projects</text>
+  <rect x="180" y="210" width="120" height="34" rx="6" fill="#d4d4d4" stroke="#999"/>
+  <text x="240" y="231" font-size="11" fill="#333" text-anchor="middle">Contact me</text>
+  <rect x="30" y="310" width="380" height="230" rx="8" fill="#ececec"/>
+  <text x="48" y="342" font-size="13" font-weight="bold" fill="#333">Featured capstone case study</text>
+  <rect x="48" y="356" width="344" height="120" rx="4" fill="#dcdcdc"/>
+  <text x="48" y="500" font-size="10" fill="#666">screenshot · title · problem → solution summary · live + repo links · "read the case study →"</text>
+  <rect x="30" y="560" width="380" height="120" rx="8" fill="#ececec"/>
+  <text x="48" y="592" font-size="13" font-weight="bold" fill="#333">Skills strip</text>
+  <rect x="48" y="610" width="344" height="40" rx="4" fill="#dcdcdc"/>
+  <text x="48" y="670" font-size="10" fill="#666">TS · React · Next.js · Tailwind · SQL — each links to evidence</text>
+  <rect x="30" y="700" width="380" height="40" rx="8" fill="#e6e6e6"/>
+  <text x="220" y="725" font-size="10" fill="#555" text-anchor="middle">footer: GitHub · LinkedIn · email</text>
+</svg>
