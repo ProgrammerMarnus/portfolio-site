@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Marnus — Full-Stack Developer Portfolio
 
-## Getting Started
+**Live site:** https://portfolio-site-beta-rosy-22.vercel.app/
 
-First, run the development server:
+A personal portfolio built to show employers what I can actually ship: real projects, every skill backed by evidence, deployed and measurable.
+
+## Who this site is for
+
+I'm **Marnus**, a full-stack developer looking for **junior full-stack developer roles**. This site is my CV in running form: employers can read what I've built, see the evidence behind each skill, and get hold of me without digging.
+
+## Pages
+
+- `/` — home: who I am, what I build, featured case study
+- `/about` — my story and how I work
+- `/projects` — projects, including the capstone case study
+- `/skills` — every skill with a link to evidence
+- `/contact` — contact form (saved to Supabase, Part 2)
+- `/cv` — CV download
+
+## Tech stack
+
+- [Next.js](https://nextjs.org) (App Router) + React + TypeScript
+- Tailwind CSS
+- Supabase (Postgres, Auth, Row Level Security) — wired up in Part 2
+- Deployed on [Vercel](https://vercel.com)
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Secrets
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+No secrets are committed. When Supabase is connected, credentials live in `.env.local`, which is never committed — the repo only shows variable *names*, never values.
 
-## Learn More
+## AI disclosure
 
-To learn more about Next.js, take a look at the following resources:
+This project was built with help from AI coding tools, as permitted by the project brief. The design, writing and direction are mine, and I can explain any line of code in the repo on request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Progress
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built across weekly milestones: plan & skeleton → Supabase + admin → capstone case study → contact form & CV → SEO → video. Details in [docs/plan.md](docs/plan.md).
