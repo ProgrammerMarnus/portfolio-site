@@ -1,11 +1,8 @@
 -- projects table + owner-only RLS for the portfolio site.
--- Paste into Supabase Dashboard → SQL Editor and run. Re-runnable:
--- it drops and recreates the table/policies.
+-- Paste into Supabase Dashboard → SQL Editor and run.
+-- Re-runnable: dropping the table also drops its policies.
+-- NOTE: re-running wipes existing rows.
 
-drop policy if exists "projects_select_public" on public.projects;
-drop policy if exists "projects_insert_owner" on public.projects;
-drop policy if exists "projects_update_owner" on public.projects;
-drop policy if exists "projects_delete_owner" on public.projects;
 drop table if exists public.projects;
 
 create table public.projects (
