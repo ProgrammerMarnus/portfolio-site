@@ -1,48 +1,36 @@
-# Marnus — Portfolio
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-**Live URL: pending** — deployed to Vercel; the URL goes here as soon as the first deployment is up.
+## Getting Started
 
-## What this is
-
-My personal portfolio site, built as the ITPROG26 Final Portfolio Project (weeks 32–38).
-It introduces me, **Marnus**, to potential employers as a **Full-Stack Developer**, and shows
-what I can build with Next.js, React, TypeScript, Tailwind and Supabase.
-
-## Pages
-
-| Route      | Purpose                                                        |
-| ---------- | -------------------------------------------------------------- |
-| `/`        | Home — 30-second pitch: who I am and the role I want            |
-| `/about`   | About — background, the kind of role I'm looking for            |
-| `/projects`| Projects — capstone case study plus other work                  |
-| `/skills`  | Skills — each one backed by a link to evidence                  |
-| `/contact` | Contact — working form (saves to Supabase from Part 2)          |
-| `/cv`      | CV — download link                                              |
-
-## Stack
-
-Next.js (App Router) · React · TypeScript · Tailwind · Supabase (from W33) · Vercel
-
-## Setup
+First, run the development server:
 
 ```bash
-npm install
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Environment variables
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Names only — values are never committed (`.env*` is git-ignored):
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## AI use disclosure
+## Learn More
 
-AI tools (the OpenCode agent) were used for: scaffolding the repo, drafting wireframes,
-writing boilerplate, and debugging. Design direction, content and every commit were
-reviewed and approved by me before landing.
+To learn more about Next.js, take a look at the following resources:
 
-## Plan
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Milestone plan and wireframes live in [`docs/`](./docs).
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
