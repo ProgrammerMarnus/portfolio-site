@@ -241,9 +241,9 @@ export default function CaseStudy() {
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">Live and repo</h2>
         <div className="flex flex-wrap gap-3">
-          <a href="/" className={linkBtn}>
+          <Link href="/" className={linkBtn}>
             You are already here
-          </a>
+          </Link>
           <a
             href="https://github.com/ProgrammerMarnus/portfolio-site"
             target="_blank"

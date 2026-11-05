@@ -46,21 +46,6 @@ export default function AdminPage() {
   const [form, setForm] = useState<FormState>(emptyForm);
   const [editingId, setEditingId] = useState<string | null>(null);
 
-  // Session gate: read the current session and keep it in sync.
-  useEffect(() => {
-    const supabase = createClient();
-    supabase.auth.getUser().then(({ data }) => {
-      setUser(data.user ?? null);
-      setChecking(false);
-    });
-    const { data: sub } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
-        setUser(session?.user ?? null);
-      },
-    );
-    return () => sub.subscription.unsubscribe();
-  }, []);
-
   const loadProjects = useCallback(async () => {
     const supabase = createClient();
     const { data, error } = await supabase
@@ -72,9 +57,21 @@ export default function AdminPage() {
     else setProjects(data ?? []);
   }, []);
 
+  // Session gate: read the current session and keep it in sync. Owner data
+  // loads from the auth-state events — INITIAL_SESSION on a stored cookie,
+  // SIGNED_IN after signing in.
   useEffect(() => {
-    if (user) void loadProjects();
-  }, [user, loadProjects]);
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data }) => {
+      setUser(data.user ?? null);
+      setChecking(false);
+    });
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+      if (session) void loadProjects();
+    });
+    return () => sub.subscription.unsubscribe();
+  }, [loadProjects]);
 
   async function signIn(e: React.FormEvent) {
     e.preventDefault();
