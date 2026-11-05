@@ -43,4 +43,4 @@ This project was built with help from AI coding tools, as permitted by the proje
 
 ## Progress
 
-Built across weekly milestones: plan & skeleton → Supabase + admin → capstone case study → contact form & CV → SEO → video. Details in [docs/plan.md](docs/plan.md).
+Built across weekly milestones: plan & skeleton (W32) → Supabase + admin + RLS proof (W33) → **capstone case study at [/projects/capstone](https://portfolio-site-beta-rosy-22.vercel.app/projects/capstone) (W34)** → contact form & CV → SEO → video. Details in [docs/plan.md](docs/plan.md).
