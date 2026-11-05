@@ -30,10 +30,21 @@ export default function Home() {
 
       <section className="space-y-3">
         <h2 className="text-xl font-semibold">Featured case study</h2>
-        <div className="rounded-lg border border-neutral-800 bg-neutral-950 p-6 text-neutral-400">
-          Capstone case study coming in W34 — the problem, my role, the stack,
-          screenshots, live and repo links, and what I would do next.
-        </div>
+        <Link
+          href="/projects/capstone"
+          className="block rounded-lg border border-emerald-900/50 bg-neutral-950 p-6 hover:border-emerald-700"
+        >
+          <p className="font-mono text-xs uppercase tracking-wide text-emerald-400">
+            Capstone · case study
+          </p>
+          <p className="mt-2 text-lg font-semibold text-neutral-200">
+            This site — built to be picked apart
+          </p>
+          <p className="mt-1 text-neutral-400">
+            Next.js, TypeScript, Tailwind, Supabase with real RLS, Vercel —
+            the full case study with screenshots and the security proof.
+          </p>
+        </Link>
       </section>
 
       <section className="space-y-3">

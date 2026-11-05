@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 import { createClient } from "@/lib/supabase/server";
 
@@ -16,19 +17,22 @@ export default function Projects() {
         </p>
       </div>
 
-      {/* Capstone case study gets its full write-up in W34. */}
-      <article className="rounded-lg border border-emerald-900/50 bg-neutral-950 p-6">
+      {/* Capstone case study — full write-up on its own page. */}
+      <Link
+        href="/projects/capstone"
+        className="block rounded-lg border border-emerald-900/50 bg-neutral-950 p-6 hover:border-emerald-700"
+      >
         <p className="font-mono text-xs uppercase tracking-wide text-emerald-400">
           Capstone · case study
         </p>
         <h2 className="mt-2 text-xl font-semibold">
-          Featured case study — coming in W34
+          This site — built to be picked apart
         </h2>
         <p className="mt-2 text-neutral-400">
-          The problem, my role, the stack, screenshots, live and repo links,
-          and what I would do next.
+          The full case study: the problem, my role, the stack, screenshots,
+          the security proof, and what I would do next.
         </p>
-      </article>
+      </Link>
 
       <Suspense fallback={<p className="text-neutral-400">Loading projects…</p>}>
         <ProjectList />
