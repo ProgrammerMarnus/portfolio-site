@@ -64,3 +64,26 @@ address. The admin account password is not recorded in this repo.
   error before policies are even considered.
 - Sign-ups are disabled in the dashboard (single admin), so no other
   authenticated identity exists in practice.
+
+## Contact messages (W35, measured 2026-11-12)
+
+The contact form writes to `public.contact_messages` — the inverse rule set:
+anyone may submit, only the owner may ever read or delete.
+
+| Test | Expected | Measured |
+|---|---|---|
+| Anon SELECT | fails | `HTTP 401` — `42501 permission denied for table contact_messages` |
+| Anon INSERT | works | `HTTP 201` (no read-back — `return=representation` needs SELECT, so it is not used) |
+| Owner SELECT | works | `HTTP 200`, the submitted row is visible |
+| Owner DELETE | works | `HTTP 204`, table back to `[]` |
+| Live form E2E | works | headless Chromium: fill form → success view → row present in Supabase → deleted; 0 console errors |
+
+Spam protection (brief: "basic"): app-side honeypot field (`website`, hidden,
+filled = fake success, no row) + 3-second time-trap on instant submits +
+`CHECK` length caps in the table definition (name 2–100, email 5–254,
+message 10–5000).
+
+Lesson recorded: an RLS policy is a filter, not a privilege. The first insert
+probe failed with `42501` until `grant insert on public.contact_messages to
+anon, authenticated` was added — the fix now lives in
+`supabase/0002_contact_messages.sql` (commit `9639304`).
