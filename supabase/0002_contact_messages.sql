@@ -44,3 +44,7 @@ create policy contact_delete_owner
   using (true);
 
 revoke select, update, delete on public.contact_messages from anon;
+
+-- Policies are filters, not permissions: the INSERT privilege must also be
+-- granted explicitly. Do not rely on Supabase's default grants — grant it here.
+grant insert on public.contact_messages to anon, authenticated;
